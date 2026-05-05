@@ -5,15 +5,15 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 
-const authRoutes = require('./routes/auth');
-const profileRoutes = require('./routes/profile');
-const gamesRoutes = require('./routes/games');
-const playersRoutes = require('./routes/players');
-const requestsRoutes = require('./routes/requests');
-const communitiesRoutes = require('./routes/communities');
-const adminRoutes = require('./routes/admin');
-const chatRoutes = require('./routes/chat');
-const { errorHandler } = require('./middleware/errorHandler');
+const authRoutes = require('../routes/auth');
+const profileRoutes = require('../routes/profile');
+const gamesRoutes = require('../routes/games');
+const playersRoutes = require('../routes/players');
+const requestsRoutes = require('../routes/requests');
+const communitiesRoutes = require('../routes/communities');
+const adminRoutes = require('../routes/admin');
+const chatRoutes = require('../routes/chat');
+const { errorHandler } = require('../middleware/errorHandler');
 
 /** Comma-separated list in CLIENT_URL (e.g. Vercel prod + preview URLs) */
 function getCorsOrigins() {

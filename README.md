@@ -176,7 +176,7 @@ Use **one Git repository** linked to **two Vercel projects**. In each project, s
 
 Environment variables:
 
-- `MONGO_URI` — MongoDB Atlas or other hosted MongoDB URI
+- **`MONGO_URI` (required)** — MongoDB Atlas (or other reachable) connection string. Without this, Vercel falls back to `localhost:27017`, which always fails in the cloud (`ECONNREFUSED`).
 - `JWT_SECRET`, `JWT_REFRESH_SECRET`
 - `CLIENT_URL` — your frontend origin(s); comma-separated for production + previews, e.g. `https://your-app.vercel.app,https://your-app-git-branch-team.vercel.app`
 - Optionally `JWT_EXPIRES_IN`, `JWT_REFRESH_EXPIRES_IN`

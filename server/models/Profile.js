@@ -70,7 +70,6 @@ const profileSchema = new mongoose.Schema(
 
 // 2dsphere geospatial index for nearby searches
 profileSchema.index({ location: '2dsphere' });
-profileSchema.index({ userId: 1 });
 
 /**
  * Check if the profile has the minimum required fields complete

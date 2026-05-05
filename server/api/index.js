@@ -4,7 +4,7 @@
  */
 require('dotenv').config();
 const serverless = require('serverless-http');
-const { buildApp } = require('../app');
+const { buildApp } = require('../lib/expressApp');
 const { connectMongo } = require('../db');
 
 const expressApp = buildApp();

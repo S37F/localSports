@@ -2,8 +2,8 @@ require('dotenv').config();
 const http = require('http');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
-const { buildApp, getCorsOrigins } = require('./app');
-const { MONGO_URI } = require('./db');
+const { buildApp, getCorsOrigins } = require('./lib/expressApp');
+const { getMongoUri } = require('./db');
 
 const app = buildApp();
 const server = http.createServer(app);
@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(getMongoUri())
   .then(() => {
     console.log('✅ MongoDB connected successfully');
     server.listen(PORT, () => {
