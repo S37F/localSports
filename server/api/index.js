@@ -1,8 +1,11 @@
 /**
  * Vercel serverless entry: all HTTP traffic is rewritten here (see server/vercel.json).
  * Socket.IO does not run on Vercel; chat still works via REST.
+ *
+ * Vercel's build scans for a direct `express` import on the entrypoint — keep this require.
  */
 require('dotenv').config();
+require('express');
 const serverless = require('serverless-http');
 const { buildApp } = require('../lib/expressApp');
 const { connectMongo } = require('../db');

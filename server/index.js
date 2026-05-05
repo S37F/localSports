@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('express'); // satisfies Vercel scanner when index.js is inspected as a candidate entry
 const http = require('http');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
